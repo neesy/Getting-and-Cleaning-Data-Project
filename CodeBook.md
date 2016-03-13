@@ -3,9 +3,9 @@
 Steps for data collection and cleaning are below. Documentation is also contained the R Script "run_analysis.R" for each step.
 
 1. The data collected was from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-2. Files were manually unzipped and saved to a directory called UCI HAR Dataset in my root directory
+2. Files were manually unzipped and saved to a directory called UCI HAR Dataset in my root directory (for the Rscript to run for someone else, the working directory may need to be edited - this code fails for me without this command).
 3. Files were manually examined to determine the layout
-4. Files used in the analysis were:
+4. Files read into R and used in the analysis were:
     features.txt - contains the features of the test and training datasets (e.g. the variable names) 
     activity_labels.txt - contains the activity names and labels
     test/subject_test.txt - contains the subject number for each observation in the test dataset
@@ -14,6 +14,7 @@ Steps for data collection and cleaning are below. Documentation is also containe
     train/subject_train.txt - contains the subject number for each observation in the training dataset
     train/y_train.txt - contains the activity labels for each observation in the training dataset
     train/x_train.txt - contains the observations for the training dataset
+        Also note that the R Script run_analysis.R calls plyr dplyr and tidyr
 5. The observations were separated randomly into groups of "test" and "train". The variable subject_type was created with values of "test" and "train" for each dataset.
 6. The activity numbers were translated to the activity names and added to the datasets through column binding
 7. Subject type was added with subject name and activity to each dataset - test and train
